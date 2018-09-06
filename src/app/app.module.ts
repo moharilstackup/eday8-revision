@@ -10,6 +10,8 @@ import { CharacterListComponent } from './components/character-list.component';
 import { CharacterDetailComponent } from './components/character-detail.component';
 import { FilmListComponent } from './components/film-list.component';
 import { FilmDetailComponent } from './components/film-detail.component';
+import { CharacterService } from './character.service';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { FilmDetailComponent } from './components/film-detail.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
