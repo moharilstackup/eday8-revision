@@ -11,6 +11,11 @@ import { CharacterDetailComponent } from './components/character-detail.componen
 import { FilmListComponent } from './components/film-list.component';
 import { FilmDetailComponent } from './components/film-detail.component';
 import { CharacterService } from './character.service';
+import { FilmService } from './film.service';
+// import { Observable } from 'rxjs/Observable';
+import { CategoryListComponent } from './components/category-list.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './components/page-not-found.component';
 
 
 @NgModule({
@@ -19,16 +24,19 @@ import { CharacterService } from './character.service';
     CharacterListComponent,
     CharacterDetailComponent,
     FilmListComponent,
-    FilmDetailComponent
+    FilmDetailComponent,
+    CategoryListComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [CharacterService],
+  providers: [CharacterService, FilmService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ICharacter } from './character';
+import { Observable } from 'rxjs/Observable';
 
 /* @Injectable({
   providedIn: 'root'
@@ -7,9 +10,15 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CharacterService {
 
-  constructor() { }
+  private _url: string = "https://swapi.co/api/people/"
 
-  getCharacters() {
+  constructor(private http: HttpClient) { }
+
+  getCharacters(): Observable<any> {
+    return this.http.get<any>(this._url);
+    
+    
+/* 
     return [
       {
         "name": "Luke Skywalker",
@@ -28,6 +37,7 @@ export class CharacterService {
         "eye_color": "yellow"
       }
     ];
+     */
   }
 
 }
